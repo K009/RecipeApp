@@ -8,11 +8,11 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken"); //query is a thing that we will ask for in our request
+  const [query, setQuery] = useState("pasta");
 
   useEffect(() => {
     getRecipes();
-  }, [query]); // to co w nawiasie to sie wtedy wlacza ,jesli puste to tylko przy odpaleniu apki
+  }, [query]);
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -29,7 +29,7 @@ const App = () => {
 
   const getSearch = (e) => {
     e.preventDefault();
-    setQuery(search); //here is set query value. it's equal to the value that u enter in input
+    setQuery(search);
   };
 
   return (
@@ -45,14 +45,17 @@ const App = () => {
           Search
         </button>
       </form>
-      {recipes.map((recipe) => (
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-        />
-      ))}
+      <div className="recipes">
+        {recipes.map((recipe) => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+        ))}
+      </div>
     </div>
   );
 };
