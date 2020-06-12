@@ -1,3 +1,17 @@
+Here is how the app looks like:
+
+  ![Image of project](src/components/img/app_preview.png "app_preview")
+
+In this picture below is shown where you can type food you're looking for.
+
+  ![Image of project](src/components/img/app_search.png "app_search")
+  
+ And finally in this picture below is shown where your results are.
+ 
+  ![Image of project](src/components/img/app_results.png "app_results")
+  
+Database is from edamam.com. The whole project was made with Dev Ed's tutorial.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
